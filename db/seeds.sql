@@ -1,7 +1,7 @@
 -- for table: burgers
 INSERT INTO burgers (burger_name, devoured)
-VALUES ('caribou burger', TRUE);
+VALUES ('caribou burger', FALSE);
 INSERT INTO burgers (burger_name, devoured)
-VALUES ('moose burger', TRUE);
+VALUES ('moose burger', FALSE);
 INSERT INTO burgers (burger_name, devoured)
-VALUES ('bear burger', TRUE);
+VALUES ('bear burger', FALSE);
