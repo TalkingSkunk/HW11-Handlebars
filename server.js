@@ -7,8 +7,6 @@ const exphbs = require('express-handlebars');
 
 const PORT = process.env.PORT || 8080;
 
-app.use(express.static('public'));
-
 // for POSTING
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -21,19 +19,11 @@ app.get('/', async function(req, res){
     const burger = await burgers.select('*', 'WHERE devoured=FALSE');
     console.log('[/ GET] Burgers not devoured:', burger);
     // return it within handlebars
-    res.render('index', { burgerHBS: burger });
     const burger2 = await burgers.select('*', 'WHERE devoured=TRUE');
     console.log('[/ GET] Burgers devoured:', burger2);
     // return it within handlebars
-    res.render('index', { burgerHBS2: burger2 });
+    res.render('index', { burgerHBS: burger, burgerHBS2: burger2  });
 })
-
-// app.get('/', async function(req, res){
-//     const burger = await burgers.select('*', 'WHERE devoured=TRUE');
-//     console.log('[/ GET] Burgers devoured:', burger);
-//     // return it within handlebars
-//     res.render('index', { burgerHBS2: burger });
-// })
 
 app.post('/burger/:id', async function (req,res){
     console.log('[/ Update] Burgers:', req.params.id);
