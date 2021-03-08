@@ -31,9 +31,9 @@ app.get('/', async function(req, res){
     res.render('index', { burgerHBS2: burger });
 })
 
-app.put('/', async function (req,res){
-    console.log('[/ PUT] Burgers:', req.body);
-    const result = await burgers.update( 'devoured=TRUE', `id='${req.body.id}'` )
+app.get('/burger/:id', async function (req,res){
+    console.log('[/ PUT] Burgers:', req.params.id);
+    const result = await burgers.update( 'devoured=TRUE', `id='${req.params.id}'` )
     res.redirect('/');
 })
 
