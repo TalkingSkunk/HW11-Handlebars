@@ -63,18 +63,18 @@ SOFTWARE.
 
 ### What needs are we meeting?
 * You are on a diet,
-    * who needs to jot down your inspirations on the fly,
-    * So you need a note taker.
+    * who needs to keep track of your daily caloric intake,
+    * So you need a food tracker.
 
 
 ### What would be the foreseeable consequences if the needs are unmet?
-* You will think of a great saying, and have no way to write down your thoughts before they vanish after the moment.
+* You will not be able to know how much calorie you have consumed in the day.
 
 
 ### What were your goals?
 * Take input from user,
-* Save the input on JSON file, and
-* Allow user to re-read pre-written notes.
+* Save the input on SQL database, and
+* Allow user to keep track of what food to eat, and the food that has already been eaten in the day.
 
 
 ### What have you done about it?
@@ -91,22 +91,16 @@ SOFTWARE.
 ## Features
 
 ```
-GIVEN a note-taking application
-WHEN I open the Note Taker
-THEN I am presented with a landing page with a link to a notes page
-WHEN I click on the link to the notes page
-THEN I am presented with a page with existing notes listed in the left-hand column, plus empty fields to enter a new note title and the note’s text in the right-hand column
-WHEN I enter a new note title and the note’s text
-THEN a Save icon appears in the navigation at the top of the page
-WHEN I click on the Save icon
-THEN the new note I have entered is saved and appears in the left-hand column with the other existing notes
-WHEN I click on an existing note in the list in the left-hand column
-THEN that note appears in the right-hand column
-WHEN I click on the Write icon in the navigation at the top of the page
-THEN I am presented with empty fields to enter a new note title and the note’s text in the right-hand column
+GIVEN the application,
+WHEN I open the Burger Maker,
+THEN I am presented with a page.
+WHEN I input a name of food,
+THEN I can see the food to be consumed on the left side of page.
+WHEN I click the ```DEVOUR``` button,
+THEN the food will be recorded as ```DEVOURED``` and moved to the right side of page.
 ```
 
-![Screenshot of working website](./public/assets/hw9.png)
+![Screenshot of working website](./hw11.png)
 
 
 
@@ -114,6 +108,7 @@ THEN I am presented with empty fields to enter a new note title and the note’s
 
 @Fil
 @Luca
+@ASKBCS Learning Assistant Online Help
 
 ### Tutorials
 * https://developer.mozilla.org/
@@ -129,7 +124,7 @@ THEN I am presented with empty fields to enter a new note title and the note’s
 
 ## Tests
 
-No tests were done.
+Console.log
 
 
 
@@ -141,42 +136,3 @@ No tests were done.
 
 
 &copy; 2021 Sam Kim
-
-
-All the recommended files and directories from the steps above should look like the following structure:
-
-```
-.
-├── config
-│   ├── connection.js
-│   └── orm.js
-│ 
-├── controllers
-│   └── burgers_controller.js
-│
-├── db
-│   ├── schema.sql
-│   └── seeds.sql
-│
-├── models
-│   └── burger.js
-│ 
-├── node_modules
-│ 
-├── package.json
-│
-├── public
-│   └── assets
-│       ├── css
-│       │   └── burger_style.css
-│       └── img
-│           └── burger.png
-│   
-│
-├── server.js
-│
-└── views
-    ├── index.handlebars
-    └── layouts
-        └── main.handlebars
-```
