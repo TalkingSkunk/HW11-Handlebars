@@ -1,163 +1,147 @@
 # HW11-Handlebars
 
-# Node Express Handlebars
+**Heroku Deployment URL**
+https://hw11-handlebars.herokuapp.com/
 
-### Overview
+**GitHub Repository URL**
+https://github.com/TalkingSkunk/HW11-Handlebars
 
-In this assignment, you'll create a burger logger with MySQL, Node, Express, Handlebars and a homemade ORM (yum!). Be sure to follow the MVC design pattern; use Node and MySQL to query and route data in your app, and Handlebars to generate your HTML.
 
-### Read This
 
-When trying to connect remotely to your Heroku database on an open network such as a coffee shop, library, or even your University WiFi, it will be blocked. If you are experiencing a Heroku connection error, this could be why.
+## Table of Contents
 
-### Important
+* [Badges](#badges)
+* [License](#license)
+* [Description](#description)
+* [Installation](#installation)
+* [Features](#features)
+* [Credits](#credits)
+* [Contributing](#contributing)
+* [Tests](#tests)
+* [Contact](#contact)
 
-* **This assignment must be deployed.** Be sure to utilize the [MYSQL Heroku Deployment Guide](../../04-Important/MySQLHerokuDeploymentProcess.pdf) in order to deploy your assignment.
 
-### Before You Begin
 
-* Eat-Da-Burger! is a restaurant app that lets users input the names of burgers they'd like to eat.
+## Badges
 
-* Whenever a user submits a burger's name, your app will display the burger on the left side of the page -- waiting to be devoured.
+![HTML/CSS](https://img.shields.io/badge/HTML%2FCSS-100%25-blue)  
+![HBS](https://img.shields.io/badge/Handlebars-Smooth-red)  
+![SQL](https://img.shields.io/badge/SQL-Spearhead-orange)  
+![JS](https://img.shields.io/badge/JavaScript-Strife-darkgreen)  
+![EXPRESSJS](https://img.shields.io/badge/ExpressJS-Steadfast-saddlebrown)  
+![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)  
 
-* Each burger in the waiting area also has a `Devour it!` button. When the user clicks it, the burger will move to the right side of the page.
 
-* Your app will store every burger in a database, whether devoured or not.
 
-* [Check out this video of the app for a run-through of how it works](https://youtu.be/msvdn95x9OM).
+## License
 
-### Commits
+MIT License
 
-Having an active and healthy commit history on GitHub is important for your future job search. It is also extremely important for making sure your work is saved in your repository. If something breaks, committing often ensures you are able to go back to a working version of your code.
+Copyright (c) 2021 Sam Kim
 
-* Committing often is a signal to employers that you are actively working on your code and learning.
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-  * We use the mantra “commit early and often.”  This means that when you write code that works, add it and commit it!
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-  * Numerous commits allow you to see how your app is progressing and give you a point to revert to if anything goes wrong.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
-* Be clear and descriptive in your commit messaging.
 
-  * When writing a commit message, avoid vague messages like "fixed." Be descriptive so that you and anyone else looking at your repository knows what happened with each commit.
 
-* We would like you to have well over 200 commits by graduation, so commit early and often!
+## Description
 
-### Submission on BCS
+### What needs are we meeting?
+* You are on a diet,
+    * who needs to jot down your inspirations on the fly,
+    * So you need a note taker.
 
-* **This assignment must be deployed.** * Please submit both the deployed Heroku link to your homework AND the link to the Github Repository!
 
-## Instructions
+### What would be the foreseeable consequences if the needs are unmet?
+* You will think of a great saying, and have no way to write down your thoughts before they vanish after the moment.
 
-#### App Setup
 
-1. Create a GitHub repo called `burger` and clone it to your computer.
+### What were your goals?
+* Take input from user,
+* Save the input on JSON file, and
+* Allow user to re-read pre-written notes.
 
-2. Make a package.json file by running `npm init` from the command line.
 
-3. Install the Express npm package: `npm install express`.
+### What have you done about it?
+* All goals are met.
 
-4. Create a server.js file.
 
-5. Install the Handlebars npm package: `npm install express-handlebars`.
 
-6. Install MySQL npm package: `npm install mysql`.
+## Installation
 
-7. Require the following npm packages inside of the server.js file:
-   * express
+1. All you need is a working computer or phone!
 
-#### DB Setup
 
-1. Inside your `burger` directory, create a folder named `db`.
 
-2. In the `db` folder, create a file named `schema.sql`. Write SQL queries this file that do the following:
+## Features
 
-   * Create the `burgers_db`.
-   * Switch to or use the `burgers_db`.
-   * Create a `burgers` table with these fields:
-     * **id**: an auto incrementing int that serves as the primary key.
-     * **burger_name**: a string.
-     * **devoured**: a boolean.
+```
+GIVEN a note-taking application
+WHEN I open the Note Taker
+THEN I am presented with a landing page with a link to a notes page
+WHEN I click on the link to the notes page
+THEN I am presented with a page with existing notes listed in the left-hand column, plus empty fields to enter a new note title and the note’s text in the right-hand column
+WHEN I enter a new note title and the note’s text
+THEN a Save icon appears in the navigation at the top of the page
+WHEN I click on the Save icon
+THEN the new note I have entered is saved and appears in the left-hand column with the other existing notes
+WHEN I click on an existing note in the list in the left-hand column
+THEN that note appears in the right-hand column
+WHEN I click on the Write icon in the navigation at the top of the page
+THEN I am presented with empty fields to enter a new note title and the note’s text in the right-hand column
+```
 
-3. Still in the `db` folder, create a `seeds.sql` file. In this file, write insert queries to populate the `burgers` table with at least three entries.
+![Screenshot of working website](./public/assets/hw9.png)
 
-4. Run the `schema.sql` and `seeds.sql` files into the mysql server from the command line
 
-5. Now you're going to run these SQL files.
 
-   * Make sure you're in the `db` folder of your app.
+## Credits
 
-   * Start MySQL command line tool and login: `mysql -u root -p`.
+@Fil
+@Luca
 
-   * With the `mysql>` command line tool running, enter the command `source schema.sql`. This will run your schema file and all of the queries in it -- in other words, you'll be creating your database.
+### Tutorials
+* https://developer.mozilla.org/
+* https://stackoverflow.com/
 
-   * Now insert the entries you defined in `seeds.sql` by running the file: `source seeds.sql`.
 
-   * Close out of the MySQL command line tool: `exit`.
 
-#### Config Setup
+## Contributing
 
-1. Inside your `burger` directory, create a folder named `config`.
+[Contributor Covenant](https://www.contributor-covenant.org/version/2/0/code_of_conduct/code_of_conduct.md)
 
-2. Create a `connection.js` file inside `config` directory.
 
-   * Inside the `connection.js` file, setup the code to connect Node to MySQL.
 
-   * Export the connection.
+## Tests
 
-3. Create an `orm.js` file inside `config` directory.
+No tests were done.
 
-   * Import (require) `connection.js` into `orm.js`
 
-   * In the `orm.js` file, create the methods that will execute the necessary MySQL commands in the controllers. These are the methods you will need to use in order to retrieve and store data in your database.
 
-     * `selectAll()`
-     * `insertOne()`
-     * `updateOne()`
+## Contact
 
-   * Export the ORM object in `module.exports`.
+**GitHub: https://github.com/TalkingSkunk**  
+**Email: sendtosamkim@gmail.com**
 
-#### Model setup
 
-* Inside your `burger` directory, create a folder named `models`.
 
-  * In `models`, make a `burger.js` file.
+&copy; 2021 Sam Kim
 
-    * Inside `burger.js`, import `orm.js` into `burger.js`
-
-    * Also inside `burger.js`, create the code that will call the ORM functions using burger specific input for the ORM.
-
-    * Export at the end of the `burger.js` file.
-
-#### Controller setup
-
-1. Inside your `burger` directory, create a folder named `controllers`.
-
-2. In `controllers`, create the `burgers_controller.js` file.
-
-3. Inside the `burgers_controller.js` file, import the following:
-
-   * Express
-   * `burger.js`
-
-4. Create the `router` for the app, and export the `router` at the end of your file.
-
-#### View setup
-
-1. Inside your `burger` directory, create a folder named `views`.
-
-   * Create the `index.handlebars` file inside `views` directory.
-
-   * Create the `layouts` directory inside `views` directory.
-
-     * Create the `main.handlebars` file inside `layouts` directory.
-
-     * Setup the `main.handlebars` file so it's able to be used by Handlebars.
-
-     * Setup the `index.handlebars` to have the template that Handlebars can render onto.
-
-     * Create a button in `index.handlebars` that will submit the user input into the database.
-
-#### Directory structure
 
 All the recommended files and directories from the steps above should look like the following structure:
 
@@ -196,51 +180,3 @@ All the recommended files and directories from the steps above should look like 
     └── layouts
         └── main.handlebars
 ```
-
-### Reminder: Submission on BCS
-
-* Please submit both the deployed Heroku link to your homework AND the link to the Github Repository!
-
-- - -
-
-### Minimum Requirements
-
-Attempt to complete homework assignment as described in instructions. If unable to complete certain portions, please pseudocode these portions to describe what remains to be completed. Hosting on Heroku and adding a README.md are required for this homework. In addition, add this homework to your portfolio, more information can be found below.
- 
-- - -
-
-### Hosting on Heroku
-
-Now that we have a backend to our applications, we use Heroku for hosting. Please note that while **Heroku is free**, it will request credit card information if you have more than 5 applications at a time or are adding a database.
-
-Please see [Heroku’s Account Verification Information](https://devcenter.heroku.com/articles/account-verification) for more details.
-
-- - -
-
-### Create a README.md
-
-Add a `README.md` to your repository describing the project. Here are some resources for creating your `README.md`. Here are some resources to help you along the way:
-
-* [About READMEs](https://help.github.com/articles/about-readmes/)
-
-* [Mastering Markdown](https://guides.github.com/features/mastering-markdown/)
-
-- - -
-
-### Add To Your Portfolio
-
-After completing the homework please add the piece to your portfolio. Make sure to add a link to your updated portfolio in the comments section of your homework so the TAs can easily ensure you completed this step when they are grading the assignment. To receive an 'A' on any assignment, you must link to it from your portfolio.
-
-- - -
-
-### One More Thing
-
-This is a really tough homework assignment, but we want you to put in your best effort to finish it.
-
-If you have any questions about this project or the material we have covered, please post them in the community channels in slack so that your fellow developers can help you! If you're still having trouble, you can come to office hours for assistance from your instructor and TAs.
-
-### Reminder
-
-When trying to connect remotely to your Heroku database on an open network such as a coffee shop, library, or even your University WiFi, it will be blocked. If you are experiencing a Heroku connection error, this could be why.
-
-**Good Luck!**
