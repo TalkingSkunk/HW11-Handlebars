@@ -96,8 +96,8 @@ WHEN I open the Burger Maker,
 THEN I am presented with a page.
 WHEN I input a name of food,
 THEN I can see the food to be consumed on the left side of page.
-WHEN I click the ```DEVOUR``` button,
-THEN the food will be recorded as ```DEVOURED``` and moved to the right side of page.
+WHEN I click the [DEVOUR] button,
+THEN the food will be recorded as [devoured] and moved to the right side of page.
 ```
 
 ![Screenshot of working website](./hw11.png)
