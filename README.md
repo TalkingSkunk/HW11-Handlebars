@@ -106,9 +106,9 @@ THEN the food will be recorded as [devoured] and moved to the right side of page
 
 ## Credits
 
-@Fil
-@Luca
-@ASKBCS Learning Assistant Online Help
+@Fil  
+@Luca  
+@ASKBCS Learning Assistant Online Help  
 
 ### Tutorials
 * https://developer.mozilla.org/
