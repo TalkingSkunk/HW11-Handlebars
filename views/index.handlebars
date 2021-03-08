@@ -5,7 +5,7 @@
             {{#each burgerHBS}}
             <li class="list-group-item">
                 {{this.id}}/Burger: <b>{{this.burger_name}}</b>        
-        <button onclick="devour('{{this.id}}')" class="btn btn-primary btn-lg float-right">DEVOUR</button>
+        <form action='/burger/{{this.id}}' method="post"><button onclick="devour('{{this.id}}')" class="btn btn-primary btn-lg float-right">DEVOUR</button></form>
         </li>
         {{/each}}
         </ul>
@@ -14,7 +14,7 @@
         <ul class="list-group mb-5">
             {{#each burgerHBS2}}
             <li class="list-group-item">
-                {{this.id}}/Burger: <b>{{this.burger_name}}</b>
+                {{this.id}}/Burger Devoured: <b>{{this.burger_name}}</b>
             </li>
             {{/each}}
         </ul>

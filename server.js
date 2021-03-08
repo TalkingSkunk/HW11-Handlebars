@@ -22,18 +22,22 @@ app.get('/', async function(req, res){
     console.log('[/ GET] Burgers not devoured:', burger);
     // return it within handlebars
     res.render('index', { burgerHBS: burger });
-})
-
-app.get('/', async function(req, res){
-    const burger = await burgers.select('*', 'WHERE devoured=TRUE');
-    console.log('[/ GET] Burgers devoured:', burger);
+    const burger2 = await burgers.select('*', 'WHERE devoured=TRUE');
+    console.log('[/ GET] Burgers devoured:', burger2);
     // return it within handlebars
-    res.render('index', { burgerHBS2: burger });
+    res.render('index', { burgerHBS2: burger2 });
 })
 
-app.get('/burger/:id', async function (req,res){
-    console.log('[/ PUT] Burgers:', req.params.id);
-    const result = await burgers.update( 'devoured=TRUE', `id='${req.params.id}'` )
+// app.get('/', async function(req, res){
+//     const burger = await burgers.select('*', 'WHERE devoured=TRUE');
+//     console.log('[/ GET] Burgers devoured:', burger);
+//     // return it within handlebars
+//     res.render('index', { burgerHBS2: burger });
+// })
+
+app.post('/burger/:id', async function (req,res){
+    console.log('[/ Update] Burgers:', req.params.id);
+    await burgers.update( 'devoured=TRUE', `id='${req.params.id}'` )
     res.redirect('/');
 })
 
