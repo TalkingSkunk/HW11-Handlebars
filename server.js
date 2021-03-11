@@ -38,6 +38,12 @@ app.post('/burger/:id', async function (req,res){
 
 app.post('/', async function(req, res){
   console.log( `[/ POST] Data received:`, req.body )
+
+  if (req.body.burgerEntry === ''){
+    res.redirect('/');
+    return;
+  }
+  
   // when submitting a new burger...make a new entry into database...
   const result = await burgers.insert('burger_name, devoured', `'${req.body.burgerEntry}', FALSE`)
   // trigger page reload
