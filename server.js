@@ -7,6 +7,9 @@ const exphbs = require('express-handlebars');
 
 const PORT = process.env.PORT || 8080;
 
+// will share any static html files with the browser
+app.use(express.static('public'));
+
 // for POSTING
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
